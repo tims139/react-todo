@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './TodoListItem.module.css';
 
 const TodoListItem = ({ todo, onRemoveTodo }) => {
   const [isRemoving, setIsRemoving] = useState(false);
@@ -9,10 +10,10 @@ const TodoListItem = ({ todo, onRemoveTodo }) => {
   };
 
   return(
-    <li>
+    <li className = {styles.listItem}>
       {todo.title} 
-      <button onClick={handleRemoveClick} disabled={isRemoving}>
-        {isRemoving ? "Removing..." : "Remove"}
+      <button onClick={handleRemoveClick} disabled={isRemoving} className={`${isRemoving ? styles.isRemoving : ''}`}>
+        x
       </button>
     </li>
   )
