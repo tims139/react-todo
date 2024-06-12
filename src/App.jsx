@@ -7,7 +7,7 @@ import styles from './components/TodoListItem.module.css';
 const App = () => {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [sortOrder, setSortOrder] = useState('asc'); // Состояние для порядка сортировки
+  const [sortOrder, setSortOrder] = useState('asc');
 
   const toggleSortOrder = () => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
@@ -94,7 +94,7 @@ const App = () => {
 
   useEffect(() => {
     fetchData();
-  }, [sortOrder]); // Перезагрузка данных при изменении порядка сортировки
+  }, [sortOrder]);
 
   return (
     <BrowserRouter>
