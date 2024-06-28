@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import TodoList from "./components/TodoList";
 import AddTodoForm from "./components/AddTodoForm";
-import styles from './components/TodoListItem.module.css';
+import styles from './components/App.module.css';
 
 const App = () => {
   const [todoList, setTodoList] = useState([]);
@@ -102,10 +102,12 @@ const App = () => {
         <Route path="/" element={
           <div className={styles.container}>
             <h1>Todo List</h1>
-            <button onClick={toggleSortOrder}>
-              Sort: {sortOrder === 'asc' ? 'Z-A' : 'A-Z'}
-            </button><br/><br/>
             <AddTodoForm onAddTodo={addTodo} />
+            <div className={styles.sort}>
+              <button onClick={toggleSortOrder}>
+                Sort: {sortOrder === 'asc' ? 'Z-A' : 'A-Z'}
+              </button>
+            </div>
             {isLoading ? (<p>Loading...</p>) : (<TodoList todoList={todoList} onRemoveTodo={removeTodo} />)}
           </div>
         } />
