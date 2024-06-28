@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import styles from "./TodoListItem.module.css";
+import styles from './TodoListItem.module.css';
 
 const TodoListItem = ({ todo, onRemoveTodo }) => {
   const [isRemoving, setIsRemoving] = useState(false);
